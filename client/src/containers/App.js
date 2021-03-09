@@ -12,6 +12,10 @@ import Nav from "../components/Nav";
 import { StoreProvider } from "../utils/GlobalState";
 import Success from "../pages/Success";
 import OrderHistory from "../pages/OrderHistory";
+import store from "../store/store"
+
+
+
 
 import { connect } from 'react-redux';
 
@@ -56,4 +60,11 @@ function App() {
   );
 }
 
-export default App;
+
+function mapStateToProps(state) {
+  return {
+    state:store.getState()
+  };
+}
+
+export default connect(mapStateToProps)(App);

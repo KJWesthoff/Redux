@@ -2,6 +2,7 @@ import React from 'react';
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+
 import store from "../../store/store"
 
 const CartItem = ({ item }) => {
@@ -13,6 +14,7 @@ const CartItem = ({ item }) => {
 
 
   const removeFromCart = item => {
+    console.log("remove running")
     dispatch({
       type: REMOVE_FROM_CART,
       _id: item._id
@@ -22,6 +24,7 @@ const CartItem = ({ item }) => {
   };
 
   const onChange = (e) => {
+    console.log("onchange running")
     const value = e.target.value;
     if (value === '0') {
       dispatch({

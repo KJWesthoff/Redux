@@ -2,7 +2,15 @@ import { createStore, applyMiddleware, compose} from "redux";
 import thunk from 'redux-thunk';
 import rootReducer from "../reducers/reduxReducers"  
 
-const initialState = {};
+const initialState = {
+    products: [],
+    cart: [],
+    cartOpen: true,
+    categories: [],
+    currentCategory: '',
+    
+  }
+
 const middleware = [thunk];
 
 const store = createStore(
@@ -15,4 +23,5 @@ const store = createStore(
      
     );
 
+console.log(store)    
 export default store;

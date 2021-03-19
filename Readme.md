@@ -21,7 +21,16 @@
   Changeover from React context state management to Redux.
   This was done by:
   * Implementting a store using [react-redux](https://react-redux.js.org/) and [redux-thunk](https://www.npmjs.com/package/redux-thunk) middleware
-  * 
+    * see the "Store" folder in "client/src/store"
+  * Adapt and import the reducers for Redux use
+    * see client/src/reducers/reduxReducers.js
+  * Import the new state and dispatch functions from the redux store in all the occasions where the original context store was used:
+    * import store from `"../store/store"`
+    * comment out: `//const [state, dispatch] = useStoreContext();`
+    * add:
+      * `const state = store.getState();`
+      * `const dispatch = store.dispatch;` 
+
   ## Installation Instructions:
   Fork it on github: https://github.com/KJWesthoff/Redux
   ## How To Use

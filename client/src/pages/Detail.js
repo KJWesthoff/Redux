@@ -13,9 +13,15 @@ import {
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import spinner from '../assets/spinner.gif'
+import store from "../store/store"
+
 
 function Detail() {
-  const [state, dispatch] = useStoreContext();
+  //const [state, dispatch] = useStoreContext();
+  const state = store.getState();
+  const dispatch = store.dispatch;
+
+  
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});

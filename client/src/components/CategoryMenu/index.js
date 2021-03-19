@@ -5,9 +5,14 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions'
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
-function CategoryMenu() {
-  const [state, dispatch] = useStoreContext();
+import store from "../../store/store"
 
+function CategoryMenu() {
+  //const [state, dispatch] = useStoreContext();
+
+  const state = store.getState();
+  const dispatch = store.dispatch;
+  
   const { categories } = state;
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);

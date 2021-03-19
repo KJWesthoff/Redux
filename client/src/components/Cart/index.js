@@ -9,10 +9,21 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import "./style.css";
 
+import store from "../../store/store"
+
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
-  const [state, dispatch] = useStoreContext();
+  //const [state, dispatch] = useStoreContext();
+  
+  const state = store.getState();
+  const dispatch = store.dispatch;
+
+
+
+  console.log(state)
+
+  
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   useEffect(() => {
@@ -36,6 +47,7 @@ const Cart = () => {
 
   function toggleCart() {
     dispatch({ type: TOGGLE_CART });
+    console.log(store.getState())
   }
 
   function calculateTotal() {

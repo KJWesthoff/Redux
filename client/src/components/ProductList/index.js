@@ -6,10 +6,16 @@ import { useQuery } from '@apollo/react-hooks';
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 import spinner from "../../assets/spinner.gif"
-
+import store from "../../store/store"
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
 
+  //const [state, dispatch] = useStoreContext();
+
+    
+  const state = store.getState();
+  const dispatch = store.dispatch;
+
+  
   const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);

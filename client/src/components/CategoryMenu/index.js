@@ -8,9 +8,10 @@ import { idbPromise } from '../../utils/helpers';
 import store from "../../store/store"
 
 function CategoryMenu() {
-  const [state, dispatch] = useStoreContext();
-  //const state = store.getState();
-  //const dispatch = store.dispatch;
+  //const [state, dispatch] = useStoreContext();
+
+  const state = store.getState();
+  const dispatch = store.dispatch;
   
   const { categories } = state;
 

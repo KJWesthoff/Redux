@@ -87,6 +87,7 @@ const reducer = (state, action) => {
 
     case UPDATE_CURRENT_CATEGORY:
       console.log("UPDATE_CURRENT_RUNNING")
+      console.log(action.currentCategory)
       return {
         ...state,
         currentCategory: action.currentCategory

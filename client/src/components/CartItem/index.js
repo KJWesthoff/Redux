@@ -6,7 +6,7 @@ import { idbPromise } from "../../utils/helpers";
 import store from "../../store/store"
 
 const CartItem = ({ item }) => {
-
+  
   //const [, dispatch] = useStoreContext();
 
   const dispatch = store.dispatch 
